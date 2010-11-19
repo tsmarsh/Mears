@@ -1,0 +1,8 @@
+As a user I would like to create and save a bug so that I can make my team aware of a defect in the system.
+
+As a user I would like to see a list of all the bugs in the system so that I can see what defects are in the system. 
+
+As a user I would like to be able to click on a defect in system and see a summary of the defect.
+
+As a user I would like to be able to assign the bug to myself so that others know not to work on it.
+
