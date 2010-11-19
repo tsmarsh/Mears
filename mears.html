@@ -1,66 +1,20 @@
 <html>
 <head>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+<title>Mears Tracking</title>	
 </head>
 <body>
-
-	<fieldset>
-		<label for="open">File name: </label>
-		<input type="text" id="open"/>
-		<button id="open_button">open</button>
-	</fieldset>
-	<fieldset>
-		<label for="write">File name: </label>
-		<input type="text" id="write"/>
-		<label for="contents">File contents: </label>
-		<textarea type="area" id="contents"></textarea>
-		<button id="write_button">write</button>
-	</fieldset>
-	<fieldset>
-		<label for="delete">File name: </label>
-		<input type="text" id="delete"/>
-		<button id="delete_button">delete</button>
-	</fieldset>
-
-<div id="file_contents"></div>
-	
-<APPLET name="sandbridge" code="com.tailoredshapes.sandbridge.SandBridge" archive="SandBridge.jar" mayscript/>
-
-<script>
-	var sandbridge;
-	
-	var deleted = function(result){
-		alert('Deleted: ' + result);
-	};
-	
-	var written = function(result){
-		alert('Written: ' + result);
-	};
-	
-	var opened = function(contents){
-		$("#file_contents").text(contents);
-	};
-	
-	$(document).ready(function(){
-		sandbridge = document.sandbridge
-		
-		$('#delete_button').click(function(){
-			sandbridge.delete($('#delete').val(), 'deleted');
-		});
-		
-		$('#write_button').click(function(){
-			try{
-				sandbridge.save($('#write').val(), $('#contents').val(), 'written');
-			}catch(err){
-				alert(err);
-			}
-			
-		});
-		
-		$('#open_button').click(function(){
-			sandbridge.open($('#open').val(), 'opened');
-		})
-	});
-</script>	
+<h1>Mears  Tracking</h1>
+<div id="list">
+	<ol>
+		<li id="list_bug_1" class="selected">1: Can't create a new bug</li>
+		<li id="list_bug_2">2: This list is fake</li>
+		<li id="list_bug_3">3: Clicking on this doesn't do anything</li>
+	</ol>
+</div>
+<div id="current_bug">
+	<span class="short_description">Can't create a new bug</span>
+	<span class="description">As a user I need the ability to create a bug so that I can make my team aware of any defects in the system</span>
+	<span class="owner">Tom</span>
+</div>	
 </body>
 </html>
