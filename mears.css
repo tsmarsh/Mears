@@ -1,0 +1,54 @@
+body {
+	background-color: #ACD5F0;
+	background-image: url('Wolf.svg');
+	background-repeat: no-repeat;
+	background-position: right bottom;
+	font-family: sans-serif;
+	background-size: 30%;
+}
+
+h1 {
+	color: white;
+	font-size: 150%;
+	margin-left: 1%;
+	margin-top: 2%;
+	margin-bottom: 1%;
+}
+
+body div {
+	/*#ACD5F0*/
+	background-color: rgba(255, 255, 255, 0.6);
+	padding-left: 0.5%;
+	padding-top: 1%;
+	padding-bottom: 1%;
+	padding-right: 0.5%;
+	margin-left: 0.5%;	
+	border-radius: 7px;
+}
+#list {
+	width: 20%;
+}
+
+#list li {
+	background-color: rgba(255, 255, 255, 0.6);
+	padding-top: 1%;
+	padding-bottom: 1%;
+	padding-left:1%;
+	padding-right: 1%;
+	margin-bottom: 2%;
+}
+
+#current_bug {
+	float: right;
+	width: 70%;
+	margin-right: 4%;
+}
+
+#current_bug div{
+	border-radius: 2px;
+	padding-left: 2%;
+	padding-right: 2%;
+	margin-right: 2%;
+	margin-bottom: 1%;
+}
+
