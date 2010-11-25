@@ -50,7 +50,7 @@
 		
 		$('#write_button').click(function(){
 			try{
-				sandbridge.save($('#write').val(), $('#contents').val(), 'written');
+				sandbridge.save($('').val(), $('#contents').val(), 'written');
 			}catch(err){
 				alert(err);
 			}
