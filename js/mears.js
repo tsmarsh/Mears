@@ -1,31 +1,40 @@
-var sandbridge;
+var sandBridge;
 var defaultPath = '/Users/tom/Desktop/bugs/';
+var bugs = [];
 
 var saved = function(face){
-	alert("saved!");
+	update_list();
 };
 
-var show_list = function(list){
-    var bugs = eval(list);
-    var objects = [];
-    $(bugs).each(function(i, bug){
-        objects.push({'bug': bug});        
+var build_bugs = function(list){
+    bugs = [];
+    $(eval(list)).each(function(i, bug){
+        bugs.push({'bug': bug});
     });
-    $.tmpl( "list_template", objects ).appendTo( "#list ol" );
+    show_list();
+}
+
+var update_list = function(){
+    sandBridge.list(defaultPath, 'build_bugs');
+}
+
+var show_list = function(){
+    $("#list ol").empty();
+    $.tmpl( "list_template", bugs ).appendTo( "#list ol" );
     
 };
 
 $(function(){
-	sandbridge = document.sandbridge;
+	sandBridge = document.sandbridge;
     $("#list_template").template("list_template");
 
 
 	$('#track_button').click(function(){
 		var filename = defaultPath + $('#write').val() + ".json";
 		var contents = $('#contents').val();
-		sandbridge.save(
+		sandBridge.save(
 			filename, contents, 'saved');
 	});
 
-    sandbridge.list(defaultPath, 'show_list');
+    update_list();
 });
