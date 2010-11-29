@@ -4,8 +4,9 @@
 <link rel="stylesheet" type="text/css" href="mears.css" />
 <title>Mears Tracking</title>
 
-<script src="js/jquery.min.js"></script>
-<script src="js/mears.js"></script>
+<script type="text/javascript"  src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.tmpl.min.js"></script>
+<script type="text/javascript" src="js/mears.js"></script>
 
 </head>
 <body>
@@ -19,30 +20,17 @@
 
 <div class="story" id="current_bug">
 	<label for="write">Identifier</label><input id="write" type="text" />
-	<textarea id="contents"></textarea>
+	<textarea cols="80" rows="20" id="contents"></textarea>
 	<button id="track_button">track</button>
 </div>
 
 <div id="list">
 	<ol></ol>
 </div>
-<APPLET name="sandbridge" code="com.tailoredshapes.sandbridge.SandBridge" archive="SandBridge.jar" mayscript/>
-<script type="text/template" id="list_item_template">
-	<div id="list_bug_1" class="selected">
-		<span class="list_id">1</span> Can't create a new bug
-	</div>	
+<APPLET height="1" width="1" name="sandbridge" code="com.tailoredshapes.sandbridge.SandBridge" archive="SandBridge.jar" mayscript/>
+
+<script id="list_template" type="text/x-jquery-tmpl">
+    <li>${bug}</li>
 </script>
-
-<script type="text/template" id="new_item_template">
-<div contentEditable="true" class="short_description">Short description</div>
-
-<div contentEditable="true" class="description">long description</div>
-
-<div contentEditable="true" class="owner">Owner</div>
-<div class="controls">
-	<button class="controls_update">Create</button>
-</div>	
-</script>
-
 </body>
 </html>

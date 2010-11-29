@@ -27,7 +27,7 @@
 <APPLET name="sandbridge" code="com.tailoredshapes.sandbridge.SandBridge" archive="SandBridge.jar" mayscript/>
 
 <script>
-	var sandbridge;
+	var sandBridge;
 	
 	var deleted = function(result){
 		alert('Deleted: ' + result);
@@ -42,15 +42,15 @@
 	};
 	
 	$(document).ready(function(){
-		sandbridge = document.sandbridge
+		sandBridge = document.sandbridge;
 		
 		$('#delete_button').click(function(){
-			sandbridge.delete($('#delete').val(), 'deleted');
+			sandBridge.delete($('#delete').val(), 'deleted');
 		});
 		
 		$('#write_button').click(function(){
 			try{
-				sandbridge.save($('').val(), $('#contents').val(), 'written');
+				sandBridge.save($('').val(), $('#contents').val(), 'written');
 			}catch(err){
 				alert(err);
 			}
@@ -58,7 +58,7 @@
 		});
 		
 		$('#open_button').click(function(){
-			sandbridge.open($('#open').val(), 'opened');
+			sandBridge.open($('#open').val(), 'opened');
 		})
 	});
 </script>	
