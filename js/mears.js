@@ -2,7 +2,8 @@ var sandBridge;
 var defaultPath = '/Users/tom/Desktop/bugs/';
 var bugs = [];
 
-var saved = function(face){
+var saved = function(){
+    alert("hello!");
 	update_list();
 };
 
@@ -24,17 +25,20 @@ var show_list = function(){
     
 };
 
-$(function(){
-	sandBridge = document.sandbridge;
-    $("#list_template").template("list_template");
-
-
-	$('#track_button').click(function(){
+var new_story = function(){
+    $("#current_bug").html($("#new_bug_template").html());  
+    $('#track_button').click(function(){
 		var filename = defaultPath + $('#write').val() + ".json";
 		var contents = $('#contents').val();
 		sandBridge.save(
 			filename, contents, 'saved');
-	});
+	});  
+}
 
+$(document).ready(function(){
+	sandBridge = document.sandbridge;
+    $("#list_template").template("list_template");
+    $("#new_bug_template").template("new_bug_template");
+    $("#new_story_button").click(new_story);
     update_list();
 });

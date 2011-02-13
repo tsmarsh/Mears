@@ -1,36 +1,52 @@
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="reset.css" />
-<link rel="stylesheet" type="text/css" href="mears.css" />
-<title>Mears Tracking</title>
+    <link rel="stylesheet" type="text/css" href="reset.css"/>
+    <link rel="stylesheet" type="text/css" href="mears.css"/>
+    <title>Mears Tracking</title>
 
-<script type="text/javascript"  src="js/jquery.min.js"></script>
-<script type="text/javascript" src="js/jquery.tmpl.min.js"></script>
-<script type="text/javascript" src="js/mears.js"></script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.tmpl.min.js"></script>
+    <script type="text/javascript" src="js/mears.js"></script>
 
 </head>
 <body>
 <h1>Mears Tracking</h1>
 
 <div class="controls">
-	<button id="new_story_button" class="control_new">New Story</button>
-	<button class="control_sync">Sync</button>
-	<button class="control_configure">Configure</button>
+    <button id="new_story_button" class="control_new">New Story</button>
+    <button class="control_sync">Sync</button>
+    <button class="control_configure">Configure</button>
 </div>
 
 <div class="story" id="current_bug">
-	<label for="write">Identifier</label><input id="write" type="text" />
-	<textarea cols="80" rows="20" id="contents"></textarea>
-	<button id="track_button">track</button>
+
 </div>
 
 <div id="list">
-	<ol></ol>
+    <ol></ol>
 </div>
-<APPLET height="1" width="1" name="sandbridge" code="com.tailoredshapes.sandbridge.SandBridge" archive="SandBridge.jar" mayscript/>
 
 <script id="list_template" type="text/x-jquery-tmpl">
-    <li>${bug}</li>
+    <li class="bug">${bug}</li>
 </script>
+
+<script id="bug_template" type="text/x-jquery-tmpl">
+    <label for="write">Identifier</label>
+
+    <h3>${identifier}</h3>
+    <textarea cols="80" rows="20" id="contents">${contents}</textarea>
+    <button class="update">update</button>
+    <button class="delete">delete</button>
+</script>
+
+<script id="new_bug_template" type="text/x-jquery-tmpl">
+    <label for="write">Identifier</label><input id="write" type="text"/>
+    <textarea cols="80" rows="20" id="contents"></textarea>
+    <button id="track_button">track</button>
+</script>
+
+<APPLET height="1" width="1" name="sandbridge" code="com.tailoredshapes.sandbridge.SandBridge" archive="SandBridge.jar"
+        mayscript></APPLET>
+
 </body>
 </html>
